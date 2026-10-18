@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<!--
+  ============================================================
+  ESTRUCTURA BASE DE LA APP · Responsable: MILAGROS (Iteración 0)
+  ============================================================
+  La pantalla tiene 3 zonas, igual que en Figma:
+    1. Menú lateral (izquierda)   -> <aside id="menu">
+    2. Contenido (centro)          -> <main id="contenido">
+    3. Barra de reproducción (abajo) -> <footer id="barra">
+-->
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nuestra Música</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+  <!-- 1. MENÚ LATERAL (las opciones se completan en el Sprint 2 con US07) -->
+  <aside id="menu">
+    <div class="logo">
+      <span class="logo-icono">♪</span>
+      <span>Nuestra Música</span>
+    </div>
+  </aside>
+
+  <!-- 2. CONTENIDO: pantalla Inicio -->
+  <main id="contenido">
+    <h1>Inicio</h1>
+    <h2>Todas las canciones</h2>
+
+    <!-- US01 (Erika): acá se dibuja la lista de canciones -->
+    <ul id="lista-canciones"></ul>
+
+    <!-- US01 escenario 2: se muestra solo si no hay canciones -->
+    <p id="mensaje-vacio" class="oculto">Todavía no hay canciones disponibles</p>
+  </main>
+
+  <!-- 3. BARRA DE REPRODUCCIÓN (US03 Juan + US04 Jazmín). Empieza oculta. -->
+  <footer id="barra" class="oculto">
+    <div class="barra-cancion">
+      <img id="barra-portada" src="" alt="Portada">
+      <div>
+        <p id="barra-nombre"></p>
+        <p id="barra-artista"></p>
+      </div>
+    </div>
+
+    <div class="barra-controles">
+      <!-- US04 (Jazmín): botón Play / Pausa -->
+      <button id="btn-play-pausa" aria-label="Pausa">❚❚</button>
+
+      <!-- US03 (Juan): barra de progreso -->
+      <div class="progreso">
+        <span id="tiempo-actual">0:00</span>
+        <div class="pista"><div id="avance"></div></div>
+        <span id="tiempo-total">0:00</span>
+      </div>
+    </div>
+
+    <div class="barra-derecha"></div>
+  </footer>
+
+  <!-- US03 escenario 2 (Juan): mensaje de error -->
+  <div id="mensaje-error" class="oculto">No se pudo reproducir la canción</div>
+
+  <!-- El reproductor de audio del navegador (no se ve, lo manejamos con JS) -->
+  <audio id="audio"></audio>
+
+  <!-- Los scripts van en este orden: primero los datos, después cada US -->
+  <script src="data/canciones.js"></script>
+  <script src="js/catalogo.js"></script>
+  <script src="js/reproductor.js"></script>
+  <script src="js/barra.js"></script>
+  <script src="js/pausa.js"></script>
+</body>
+</html>
