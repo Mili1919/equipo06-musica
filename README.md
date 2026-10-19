@@ -13,7 +13,7 @@ La estamos haciendo con Scrum, en sprints de una semana.
 - Juan
 - Jazmín
 
-## Sprint 1 (21/10 al 27/10)
+## Sprint 1 
 
 Objetivo: que el usuario pueda ver el catálogo, elegir una canción, escucharla y pausarla.
 
