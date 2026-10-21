@@ -24,10 +24,19 @@
     <div class="logo"> 
         <img src="imagenes/Spotify_Full_Logo_RGB_Green.png" alt="Spotify Logo" class="logo-imagen">
     </div> 
+
+    <!-- Sprint 2 - US07: opciones del menú -->
+    <div class="menu-opciones">
+      <button class="menu-opcion activa" data-pantalla="inicio">⌂ Inicio</button>
+      <button class="menu-opcion" data-pantalla="buscar">⌕ Buscar</button>
+      <button class="menu-opcion" data-pantalla="biblioteca">▤ Tu biblioteca</button>
+    </div>
+    <button class="menu-opcion menu-cuenta" data-pantalla="cuenta">◯ Mi cuenta</button>
 </aside>
 
   <!-- 2. CONTENIDO: pantalla Inicio -->
   <main id="contenido">
+    <div id="pantalla-inicio" class="pantalla">
     <h1>Inicio</h1>
     <h2>Todas las canciones</h2>
 
@@ -36,6 +45,61 @@
 
     <!-- US01 escenario 2: se muestra solo si no hay canciones -->
     <p id="mensaje-vacio" class="oculto">Todavía no hay canciones disponibles</p>
+    </div>
+
+    <!-- Sprint 2 - US06 (Juan): pantalla Buscar -->
+    <div id="pantalla-buscar" class="pantalla oculto">
+      <h1>Buscar</h1>
+      <input id="buscador" type="text" placeholder="⌕  ¿Qué querés escuchar?">
+      <p id="buscador-ayuda" class="texto-gris">Escribí el nombre de una canción para empezar.</p>
+      <ul id="lista-resultados"></ul>
+      <p id="sin-resultados" class="mensaje-centro oculto">No se encontraron resultados</p>
+    </div>
+
+    <!-- Sprint 2 - US09 (Erika): Tu biblioteca y Tus favoritas -->
+    <div id="pantalla-biblioteca" class="pantalla oculto">
+      <h1>Tu biblioteca</h1>
+      <button id="tarjeta-favoritas" class="tarjeta">
+        <span class="tarjeta-icono">♥</span>
+        <span>
+          <b>Tus favoritas</b><br>
+          <span id="cantidad-favoritas" class="texto-gris">0 canciones</span>
+        </span>
+      </button>
+    </div>
+
+    <div id="pantalla-favoritas" class="pantalla oculto">
+      <button class="btn-volver" data-pantalla="biblioteca">← Tu biblioteca</button>
+      <h1>Tus favoritas</h1>
+      <ul id="lista-favoritas"></ul>
+      <div id="favoritas-vacio" class="mensaje-centro oculto">
+        <p>Todavía no tenés favoritas</p>
+        <p class="texto-gris">Tocá el corazón ♡ de una canción para agregarla acá.</p>
+      </div>
+    </div>
+
+    <!-- Sprint 2 - US07 (Milagros): Mi cuenta -->
+    <div id="pantalla-cuenta" class="pantalla oculto">
+      <h1>Mi cuenta</h1>
+      <div class="cuadro-cuenta">
+        <p class="cuadro-titulo">Todavía no iniciaste sesión</p>
+        <p class="texto-gris">Iniciá sesión o creá una cuenta para guardar tu música.</p>
+        <button id="btn-iniciar-sesion" class="btn-verde">Iniciar sesión</button>
+        <button id="btn-crear-cuenta" class="btn-borde">Crear cuenta</button>
+      </div>
+    </div>
+
+    <!-- Sprint 2 - US02 (Aixa): detalle de una canción -->
+    <div id="pantalla-detalle" class="pantalla oculto">
+      <button class="btn-volver" data-pantalla="inicio">← Volver</button>
+      <img id="detalle-portada" src="" alt="Portada">
+      <h1 id="detalle-nombre"></h1>
+      <p><span class="texto-gris">Artista:</span> <span id="detalle-artista"></span></p>
+      <p><span class="texto-gris">Álbum:</span> <span id="detalle-album"></span></p>
+      <p><span class="texto-gris">Género:</span> <span id="detalle-genero"></span></p>
+      <p><span class="texto-gris">Duración:</span> <span id="detalle-duracion"></span></p>
+      <button id="detalle-play" class="btn-verde">▶ Play</button>
+    </div>
   </main>
 
   <!-- 3. BARRA DE REPRODUCCIÓN (US03 Juan + US04 Jazmín). Empieza oculta. -->
@@ -46,11 +110,18 @@
         <p id="barra-nombre"></p>
         <p id="barra-artista"></p>
       </div>
+      <!-- Sprint 2 - US08 (Erika): corazón de la canción que suena -->
+      <button id="barra-corazon" class="btn-corazon">♡</button>
     </div>
 
     <div class="barra-controles">
       <!-- US04 (Jazmín): botón Play / Pausa -->
-      <button id="btn-play-pausa" aria-label="Pausa">❚❚</button>
+      <div class="botones">
+        <!-- Sprint 2 - US05 (Jazmín): anterior y siguiente -->
+        <button id="btn-anterior" class="btn-control">⏮</button>
+        <button id="btn-play-pausa" aria-label="Pausa">❚❚</button>
+        <button id="btn-siguiente" class="btn-control">⏭</button>
+      </div>
 
       <!-- US03 (Juan): barra de progreso -->
       <div class="progreso">
@@ -66,6 +137,9 @@
   <!-- US03 escenario 2 (Juan): mensaje de error -->
   <div id="mensaje-error" class="oculto">No se pudo reproducir la canción</div>
 
+  <!-- Sprint 2: avisos cortos (por ejemplo "Terminó la lista") -->
+  <div id="mensaje-aviso" class="oculto"></div>
+
   <!-- El reproductor de audio del navegador (no se ve, lo manejamos con JS) -->
   <audio id="audio"></audio>
 
@@ -75,5 +149,14 @@
   <script src="js/reproductor.js"></script>
   <script src="js/barra.js"></script>
   <script src="js/pausa.js"></script>
+
+  <!-- Sprint 2 -->
+  <script src="js/aviso.js"></script>
+  <script src="js/menu.js"></script>
+  <script src="js/siguiente.js"></script>
+  <script src="js/favoritas.js"></script>
+  <script src="js/buscador.js"></script>
+  <script src="js/biblioteca.js"></script>
+  <script src="js/detalle.js"></script>
 </body>
 </html>
