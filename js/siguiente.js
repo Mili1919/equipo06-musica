@@ -37,6 +37,16 @@ btnAnterior.addEventListener("click", function () {
         return;
     }
 
+
     // Reproducimos la cancion anterior
     reproducirCancion(posicionActual - 1);
 });
+
+
+
+   // Para el botón Play del detalle (US02): reproduce una canción de la lista actual
+   let listaActual = [];
+
+   function sonarLugar(lugar) {
+       reproducirCancion(listaActual[lugar]);
+   }
