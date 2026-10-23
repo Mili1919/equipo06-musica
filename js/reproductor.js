@@ -65,7 +65,7 @@ function reproducirCancion(posicion) {
 }
 
 // Reproducir una cancion al hacer clic en el boton Play de una fila
-lista.addEventListener("click", function (evento) {
+   document.addEventListener("click", function (evento) {
 
     if (evento.target.classList.contains("btn-play-fila")) {
 
