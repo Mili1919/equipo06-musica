@@ -24,12 +24,19 @@
     <div class="logo"> 
         <img src="imagenes/Spotify_Full_Logo_RGB_Green.png" alt="Spotify Logo" class="logo-imagen">
     </div> 
+
+    <!-- Sprint 2 - US07: opciones del menú -->
+    <div class="menu-opciones">
+      <button class="menu-opcion activa" data-pantalla="inicio">⌂ Inicio</button>
+      <button class="menu-opcion" data-pantalla="buscar">⌕ Buscar</button>
+      <button class="menu-opcion" data-pantalla="biblioteca">▤ Tu biblioteca</button>
+    </div>
+    <button class="menu-opcion menu-cuenta" data-pantalla="cuenta">◯ Mi cuenta</button>
 </aside>
 
   <!-- 2. CONTENIDO: pantalla Inicio -->
   <main id="contenido">
-    <!-- Vista Inicio -->
-    <section id="vista-inicio">
+    <div id="pantalla-inicio" class="pantalla">
       <h1>Inicio</h1>
       <h2>Todas las canciones</h2>
 
@@ -38,24 +45,13 @@
 
       <!-- US01 escenario 2: se muestra solo si no hay canciones -->
       <p id="mensaje-vacio" class="oculto">Todavía no hay canciones disponibles</p>
-    </section>
+    </div>
 
-    <!-- Vista Detalle US02 -->
-    <section id="vista-detalle" class="oculto">
-      <button id="btn-volver" class="btn-volver">← Volver a Inicio</button>
-      <div class="detalle-contenedor">
-        <img id="detalle-portada" src="" alt="Portada de la canción" class="detalle-portada">
-        <div class="detalle-info">
-          <h1 id="detalle-nombre"></h1>
-          <p><strong>Artista:</strong> <span id="detalle-artista"></span></p>
-          <p><strong>Álbum:</strong> <span id="detalle-album"></span></p>
-          <p><strong>Género:</strong> <span id="detalle-genero"></span></p>
-          <p><strong>Duración:</strong> <span id="detalle-duracion"></span></p>
-          <button id="btn-reproducir-detalle" class="btn-reproducir-detalle">Play</button>
-        </div>
-      </div>
-      <p id="detalle-no-disponible" class="detalle-error oculto">Esta canción no está disponible</p>
-    </section>
+
+      <!-- US01 (Erika): acá se dibuja la lista de canciones -->
+      <ul id="lista-canciones"></ul>
+
+
   </main>
 
   <!-- 3. BARRA DE REPRODUCCIÓN (US03 Juan + US04 Jazmín). Empieza oculta. -->
@@ -66,11 +62,18 @@
         <p id="barra-nombre"></p>
         <p id="barra-artista"></p>
       </div>
+      <!-- Sprint 2 - US08 (Erika): corazón de la canción que suena -->
+      <button id="barra-corazon" class="btn-corazon">♡</button>
     </div>
 
     <div class="barra-controles">
       <!-- US04 (Jazmín): botón Play / Pausa -->
-      <button id="btn-play-pausa" aria-label="Pausa">❚❚</button>
+      <div class="botones">
+        <!-- Sprint 2 - US05 (Jazmín): anterior y siguiente -->
+        <button id="btn-anterior" class="btn-control">⏮</button>
+        <button id="btn-play-pausa" aria-label="Pausa">❚❚</button>
+        <button id="btn-siguiente" class="btn-control">⏭</button>
+      </div>
 
       <!-- US03 (Juan): barra de progreso -->
       <div class="progreso">
@@ -86,6 +89,9 @@
   <!-- US03 escenario 2 (Juan): mensaje de error -->
   <div id="mensaje-error" class="oculto">No se pudo reproducir la canción</div>
 
+  <!-- Sprint 2: avisos cortos (por ejemplo "Terminó la lista") -->
+  <div id="mensaje-aviso" class="oculto"></div>
+
   <!-- El reproductor de audio del navegador (no se ve, lo manejamos con JS) -->
   <audio id="audio"></audio>
 
@@ -96,5 +102,14 @@
   <script src="js/reproductor.js"></script>
   <script src="js/barra.js"></script>
   <script src="js/pausa.js"></script>
+
+  <!-- Sprint 2 -->
+  <script src="js/aviso.js"></script>
+  <script src="js/menu.js"></script>
+  <script src="js/siguiente.js"></script>
+  <script src="js/favoritas.js"></script>
+  <script src="js/buscador.js"></script>
+  <script src="js/biblioteca.js"></script>
+  <script src="js/detalle.js"></script>
 </body>
 </html>

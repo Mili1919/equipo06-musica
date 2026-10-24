@@ -22,6 +22,16 @@ Objetivo: que el usuario pueda ver el catálogo, elegir una canción, escucharla
 - US04 Pausar y reanudar → Jazmín
 - Estructura base y pruebas → Milagros
 
+## Sprint 2 (21/10 al 27/10)
+
+Objetivo: que el usuario pueda buscar canciones, moverse con el menú lateral, ver el detalle, pasar de canción y guardar y ver sus favoritas.
+
+- Estructura de las pantallas nuevas y US07 Menú lateral → Milagros
+- US05 Siguiente / anterior → Jazmín
+- US08 Marcar favorita y US09 Ver mis favoritas → Erika
+- US06 Buscar por nombre → Juan
+- US02 Detalle de una canción → Aixa
+
 ## Cómo abrir la app
 
 1. Abrir la carpeta con VS Code
