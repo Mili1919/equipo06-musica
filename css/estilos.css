@@ -125,3 +125,72 @@ h2 { font-size: 20px; font-weight: 700; margin-bottom: 16px; }
     width: auto;
     height: 50px;
 }
+
+
+/* ---------- US02: VISTA DETALLE ---------- */
+.btn-volver {
+  background: transparent;
+  color: var(--texto);
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 32px;
+  font-family: 'Inter', Arial, sans-serif;
+}
+.btn-volver:hover {
+  text-decoration: underline;
+}
+
+.detalle-contenedor {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+  margin-bottom: 24px;
+}
+
+.detalle-portada {
+  width: 280px;
+  height: 280px;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+.detalle-info h1 {
+  font-size: 48px;
+  margin-bottom: 24px;
+}
+
+.detalle-info p {
+  font-size: 18px;
+  margin-bottom: 12px;
+  color: var(--texto-secundario);
+}
+
+.detalle-info strong {
+  color: var(--texto);
+}
+
+.btn-reproducir-detalle {
+  margin-top: 24px;
+  background: var(--acento);
+  color: #000;
+  border: none;
+  padding: 12px 48px;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'Inter', Arial, sans-serif;
+}
+
+.btn-reproducir-detalle:hover {
+  transform: scale(1.05);
+}
+
+.detalle-error {
+  color: var(--error);
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 32px;
+}

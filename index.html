@@ -28,14 +28,34 @@
 
   <!-- 2. CONTENIDO: pantalla Inicio -->
   <main id="contenido">
-    <h1>Inicio</h1>
-    <h2>Todas las canciones</h2>
+    <!-- Vista Inicio -->
+    <section id="vista-inicio">
+      <h1>Inicio</h1>
+      <h2>Todas las canciones</h2>
 
-    <!-- US01 (Erika): acá se dibuja la lista de canciones -->
-    <ul id="lista-canciones"></ul>
+      <!-- US01 (Erika): acá se dibuja la lista de canciones -->
+      <ul id="lista-canciones"></ul>
 
-    <!-- US01 escenario 2: se muestra solo si no hay canciones -->
-    <p id="mensaje-vacio" class="oculto">Todavía no hay canciones disponibles</p>
+      <!-- US01 escenario 2: se muestra solo si no hay canciones -->
+      <p id="mensaje-vacio" class="oculto">Todavía no hay canciones disponibles</p>
+    </section>
+
+    <!-- Vista Detalle US02 -->
+    <section id="vista-detalle" class="oculto">
+      <button id="btn-volver" class="btn-volver">← Volver a Inicio</button>
+      <div class="detalle-contenedor">
+        <img id="detalle-portada" src="" alt="Portada de la canción" class="detalle-portada">
+        <div class="detalle-info">
+          <h1 id="detalle-nombre"></h1>
+          <p><strong>Artista:</strong> <span id="detalle-artista"></span></p>
+          <p><strong>Álbum:</strong> <span id="detalle-album"></span></p>
+          <p><strong>Género:</strong> <span id="detalle-genero"></span></p>
+          <p><strong>Duración:</strong> <span id="detalle-duracion"></span></p>
+          <button id="btn-reproducir-detalle" class="btn-reproducir-detalle">Play</button>
+        </div>
+      </div>
+      <p id="detalle-no-disponible" class="detalle-error oculto">Esta canción no está disponible</p>
+    </section>
   </main>
 
   <!-- 3. BARRA DE REPRODUCCIÓN (US03 Juan + US04 Jazmín). Empieza oculta. -->
@@ -72,6 +92,7 @@
   <!-- Los scripts van en este orden: primero los datos, después cada US -->
   <script src="data/canciones.js"></script>
   <script src="js/catalogo.js"></script>
+  <script src="js/detalle.js"></script>
   <script src="js/reproductor.js"></script>
   <script src="js/barra.js"></script>
   <script src="js/pausa.js"></script>

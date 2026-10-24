@@ -26,7 +26,7 @@ function mostrarCatalogo() {
       </div>
       <img class="fila-portada" src="${cancion.portada}" alt="Portada de ${cancion.nombre}">
       <div class="fila-datos">
-        <p class="fila-nombre">${cancion.nombre}</p>
+        <p class="fila-nombre" data-posicion="${posicion}" style="cursor:pointer;">${cancion.nombre}</p>
         <p class="fila-artista">${cancion.artista}</p>
       </div>
       <span class="fila-duracion">${cancion.duracion}</span>
