@@ -29,6 +29,7 @@ function mostrarCatalogo() {
         <p class="fila-nombre">${cancion.nombre}</p>
         <p class="fila-artista">${cancion.artista}</p>
       </div>
+      <button class="btn-corazon" data-posicion="${posicion}">♡</button>
       <span class="fila-duracion">${cancion.duracion}</span>
     `;
 
