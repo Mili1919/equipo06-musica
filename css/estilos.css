@@ -25,7 +25,7 @@ body {
   height: 100vh;
   display: grid;
   grid-template-columns: 240px 1fr;   /* menú | contenido */
-  grid-template-rows: 1fr 90px;       /* arriba | barra */
+  grid-template-rows: 1fr auto;       /* arriba | barra */
   overflow: hidden;
 }
 
@@ -83,6 +83,9 @@ h2 { font-size: 20px; font-weight: 700; margin-bottom: 16px; }
 
 /* ---------- 3. Barra de reproducción ---------- */
 #barra {
+  height: 90px;
+  overflow: hidden;
+  transition: height 0.35s ease, border-top-width 0.35s ease;
   grid-column: 1 / 3;
   background: var(--superficie);
   border-top: 1px solid var(--borde);
@@ -108,6 +111,7 @@ h2 { font-size: 20px; font-weight: 700; margin-bottom: 16px; }
 .pista { width: 560px; height: 4px; background: #4d4d4d; border-radius: 2px; overflow: hidden; }
 #avance { width: 0%; height: 100%; background: var(--acento); }
 #barra.pausada #avance { background: var(--texto); }
+#barra {height: 90px;}
 
 /* Mensaje de error (US03 escenario 2) */
 #mensaje-error {
@@ -196,3 +200,6 @@ h2 { font-size: 20px; font-weight: 700; margin-bottom: 16px; }
   background: var(--texto); color: var(--fondo);
   padding: 14px 20px; border-radius: 8px; font-weight: 600;
 }
+
+/* La barra oculta no usa display:none, así se puede animar al aparecer */
+#barra.oculto { display: flex !important; height: 0; border-top-width: 0; visibility: hidden; }
