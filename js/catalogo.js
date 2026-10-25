@@ -29,6 +29,7 @@ function mostrarCatalogo() {
         <p class="fila-nombre">${cancion.nombre}</p>
         <p class="fila-artista">${cancion.artista}</p>
       </div>
+      <button class="btn-corazon" data-posicion="${posicion}">♡</button>
       <span class="fila-duracion">${cancion.duracion}</span>
     `;
 
@@ -38,3 +39,27 @@ function mostrarCatalogo() {
 
 // Cuando la página termina de cargar, se dibuja el catálogo
 document.addEventListener("DOMContentLoaded", mostrarCatalogo);
+
+// Sprint 2 (Erika): la misma fila del catálogo, para usarla en Buscar y en Tus favoritas.
+// "numero" es el número que se ve a la izquierda de la fila.
+function crearFila(cancion, posicion, numero) {
+  const fila = document.createElement("li");
+  fila.className = "fila";
+  fila.dataset.posicion = posicion;
+
+  fila.innerHTML = `
+    <div class="fila-inicio">
+      <span class="fila-numero">${numero}</span>
+      <button class="btn-play-fila" aria-label="Reproducir">▶</button>
+    </div>
+    <img class="fila-portada" src="${cancion.portada}" alt="Portada de ${cancion.nombre}">
+    <div class="fila-datos">
+      <p class="fila-nombre">${cancion.nombre}</p>
+      <p class="fila-artista">${cancion.artista}</p>
+    </div>
+    <button class="btn-corazon" data-posicion="${posicion}">♡</button>
+    <span class="fila-duracion">${cancion.duracion}</span>
+  `;
+
+  return fila;
+}
