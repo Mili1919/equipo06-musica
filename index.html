@@ -53,13 +53,19 @@
       <h1>Buscar</h1>
       <input id="buscador" type="text" placeholder="⌕  ¿Qué querés escuchar?">
       <p id="buscador-ayuda" class="texto-gris">Escribí el nombre de una canción para empezar.</p>
+      <!-- Sprint 3 - US18: los artistas que coinciden aparecen arriba de las canciones -->
+      <div id="lista-artistas" class="oculto"></div>
       <ul id="lista-resultados"></ul>
       <p id="sin-resultados" class="mensaje-centro oculto">No se encontraron resultados</p>
     </div>
 
     <!-- Sprint 2 - US09 (Erika): Tu biblioteca y Tus favoritas -->
     <div id="pantalla-biblioteca" class="pantalla oculto">
-      <h1>Tu biblioteca</h1>
+      <!-- Sprint 3 - US10: el botón "+ Crear playlist" va en la misma línea que el título -->
+      <div class="encabezado-biblioteca">
+        <h1>Tu biblioteca</h1>
+        <button id="btn-crear-playlist" class="btn-verde btn-chico">+ Crear playlist</button>
+      </div>
       <button id="tarjeta-favoritas" class="tarjeta">
         <span class="tarjeta-icono">♥</span>
         <span>
@@ -67,6 +73,13 @@
           <span id="cantidad-favoritas" class="texto-gris">0 canciones</span>
         </span>
       </button>
+
+      <!-- Sprint 3 - US13: una fila por playlist, debajo de "Tus favoritas" -->
+      <ul id="lista-playlists"></ul>
+      <div id="playlists-vacio" class="mensaje-centro oculto">
+        <p>Todavía no tenés playlists</p>
+        <button id="btn-crear-playlist-vacio" class="btn-verde">+ Crear playlist</button>
+      </div>
     </div>
 
     <div id="pantalla-favoritas" class="pantalla oculto">
@@ -76,6 +89,16 @@
       <div id="favoritas-vacio" class="mensaje-centro oculto">
         <p>Todavía no tenés favoritas</p>
         <p class="texto-gris">Tocá el corazón ♡ de una canción para agregarla acá.</p>
+      </div>
+    </div>
+
+    <!-- Sprint 3 - US13 y US12: una playlist por dentro -->
+    <div id="pantalla-playlist" class="pantalla oculto">
+      <button class="btn-volver" data-pantalla="biblioteca">← Tu biblioteca</button>
+      <h1 id="playlist-nombre"></h1>
+      <ul id="lista-playlist"></ul>
+      <div id="playlist-vacia" class="mensaje-centro oculto">
+        <p>Tu playlist está vacía</p>
       </div>
     </div>
 
@@ -141,6 +164,22 @@
   <!-- Sprint 2: avisos cortos (por ejemplo "Terminó la lista") -->
   <div id="mensaje-aviso" class="oculto"></div>
 
+  <!-- Sprint 3 - US10: cuadro para crear una playlist -->
+  <div id="fondo-crear-playlist" class="fondo-cuadro oculto">
+    <div class="cuadro-playlist">
+      <p class="cuadro-titulo">Crear playlist</p>
+      <label for="playlist-nombre-nueva" class="texto-gris">Nombre</label>
+      <input id="playlist-nombre-nueva" type="text" maxlength="40">
+      <div class="botones-cuadro">
+        <button id="btn-cancelar-playlist" class="btn-borde btn-chico">Cancelar</button>
+        <button id="btn-confirmar-playlist" class="btn-verde btn-chico">Crear</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sprint 3 - US11 y US12: menú de tres puntos (⋯) de una canción -->
+  <div id="menu-fila" class="menu-fila oculto"></div>
+
   <!-- El reproductor de audio del navegador (no se ve, lo manejamos con JS) -->
   <audio id="audio"></audio>
 
@@ -159,5 +198,11 @@
   <script src="js/buscador.js"></script>
   <script src="js/biblioteca.js"></script>
   <script src="js/detalle.js"></script>
+
+  <!-- Sprint 3 -->
+  <script src="js/playlists.js"></script>
+  <script src="js/ver-playlists.js"></script>
+  <script src="js/agregar-playlist.js"></script>
+  <script src="js/quitar-playlist.js"></script>
 </body>
 </html>

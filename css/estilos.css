@@ -201,3 +201,38 @@ h2 { font-size: 20px; font-weight: 700; margin-bottom: 16px; }
 }
 
 #barra.oculto { display: flex !important; height: 0; border-top-width: 0; visibility: hidden; }
+
+/* ---------- SPRINT 3 ---------- */
+
+/* Tu biblioteca: título con el botón + Crear playlist (US10) */
+.encabezado-biblioteca { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+.encabezado-biblioteca h1 { margin: 0; }
+.btn-chico { height: 40px; width: auto; padding: 0 20px; margin-top: 0; font-size: 14px; }
+
+/* Playlists en Tu biblioteca (US13) */
+#lista-playlists { list-style: none; display: flex; flex-direction: column; gap: 8px; margin-top: 8px; }
+.playlist-portada { width: 64px; height: 64px; border-radius: 6px; object-fit: cover; }
+.playlist-icono { background: var(--superficie-hover); }
+#lista-playlist { list-style: none; display: flex; flex-direction: column; gap: 4px; }
+
+/* Cuadro para crear una playlist (US10) */
+#fondo-crear-playlist { position: fixed; inset: 0; background: rgba(0, 0, 0, 0.7); display: grid; place-items: center; z-index: 20; }
+.cuadro-playlist { width: 420px; padding: 32px; border-radius: 16px; background: var(--superficie-hover); }
+.cuadro-playlist label { display: block; font-size: 14px; font-weight: 700; margin: 16px 0 8px; }
+.cuadro-playlist input { width: 100%; height: 44px; padding: 0 16px; border-radius: 8px; border: 1px solid #3a3a3a; background: var(--fondo); color: var(--texto); font-size: 16px; font-family: inherit; outline: none; }
+.cuadro-playlist input:focus { border-color: var(--texto); }
+.botones-cuadro { display: flex; justify-content: flex-end; gap: 12px; margin-top: 24px; }
+.botones-cuadro .btn-chico { width: 120px; }
+
+/* Menú de tres puntos de cada canción (US11 y US12) */
+.btn-menu-fila { background: none; border: none; color: var(--texto-secundario); font-size: 22px; cursor: pointer; width: 32px; }
+.btn-menu-fila:hover { color: var(--texto); }
+#menu-fila { position: fixed; z-index: 15; min-width: 200px; padding: 6px; border-radius: 8px; background: var(--superficie-hover); box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6); display: flex; flex-direction: column; }
+.menu-fila-opcion { background: none; border: none; color: var(--texto); text-align: left; padding: 10px 12px; border-radius: 4px; font-size: 14px; font-family: inherit; cursor: pointer; }
+.menu-fila-opcion:hover { background: #3a3a3a; }
+
+/* Artistas en la búsqueda (US18) */
+#lista-artistas { display: flex; flex-wrap: wrap; gap: 24px; margin: 16px 0 24px; }
+.tarjeta-artista { display: flex; flex-direction: column; align-items: center; gap: 8px; width: 140px; }
+.tarjeta-artista img { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; }
+.tarjeta-artista b { font-size: 15px; text-align: center; }

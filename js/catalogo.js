@@ -31,6 +31,7 @@ function mostrarCatalogo() {
       </div>
       <button class="btn-corazon" data-posicion="${posicion}">♡</button>
       <span class="fila-duracion">${cancion.duracion}</span>
+      <button class="btn-menu-fila" aria-label="Más opciones">⋯</button>
     `;
 
     lista.appendChild(fila);
@@ -59,6 +60,7 @@ function crearFila(cancion, posicion, numero) {
     </div>
     <button class="btn-corazon" data-posicion="${posicion}">♡</button>
     <span class="fila-duracion">${cancion.duracion}</span>
+    <button class="btn-menu-fila" aria-label="Más opciones">⋯</button>
   `;
 
   return fila;

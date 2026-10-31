@@ -32,6 +32,16 @@ Objetivo: que el usuario pueda buscar canciones, moverse con el menú lateral, v
 - US06 Buscar por nombre → Juan
 - US02 Detalle de una canción → Aixa
 
+## Sprint 3 (31/10 al 03/11)
+
+Objetivo: que el usuario pueda crear playlists, agregarles y quitarles canciones, verlas en Tu biblioteca y buscar por artista.
+
+- US10 Crear una playlist
+- US11 Agregar canciones a una playlist
+- US13 Ver mis playlists y su contenido
+- US12 Quitar canciones de una playlist
+- US18 Buscar por artista
+
 ## Cómo abrir la app
 
 1. Abrir la carpeta con VS Code
